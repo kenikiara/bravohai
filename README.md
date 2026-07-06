@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BravohAi
 
-## Getting Started
+AI trading copilot for chart analysis — **XAUUSD (Gold) first**, forex, crypto and indices supported. Upload a chart screenshot and get a professional trade plan in seconds: trend, key levels, bullish/bearish scenarios with probabilities, and entry / stop-loss / take-profit adapted to your trading profile.
 
-First, run the development server:
+## Features
+
+- **AI chart analysis** — Claude vision reads your chart screenshot(s): market structure, support/resistance, order blocks, fair value gaps, Fibonacci, RSI, macro context.
+- **Adapted trading plans** — separate plans for scalpers, day traders and swing traders; your onboarding profile picks the default tab.
+- **Probable scenarios** — bullish and bearish scenarios with probabilities that sum to 100.
+- **No-trade discipline** — when the setup is weak, the AI refuses to manufacture a trade and says why.
+- **Live XAUUSD price** — real-time gold quote + sparkline (Yahoo Finance).
+- **Economic calendar** — high-impact USD events from the public Forex Factory feed.
+- **History & win rate** — every analysis is saved locally; mark wins/losses and watch your stats evolve. After 10 analyses the AI calibrates to your profile.
+- **Onboarding quiz** — 5 questions calibrate the AI to your style from the first analysis.
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # add your ANTHROPIC_API_KEY
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Without an `ANTHROPIC_API_KEY`, the app runs in **demo mode**: analyses return a realistic sample so the entire flow (upload → analysis → history → stats) stays testable. Add a key to `.env.local` for live AI analysis.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Stack
 
-## Learn More
+- Next.js 16 (App Router) + TypeScript + Tailwind CSS 4
+- Anthropic Claude (vision) for chart analysis — model configurable via `ANTHROPIC_MODEL`
+- Yahoo Finance (quotes) and Forex Factory calendar feed (no keys required)
+- LocalStorage persistence (no database needed)
 
-To learn more about Next.js, take a look at the following resources:
+## Disclaimer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+BravohAi is an AI-powered chart analysis tool for educational purposes only. Nothing in this app constitutes financial advice. Trading involves significant risk of loss.
