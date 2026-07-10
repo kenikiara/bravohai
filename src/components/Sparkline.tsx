@@ -4,7 +4,7 @@ export function Sparkline({
   data,
   width = 120,
   height = 36,
-  stroke = "#FACC15",
+  stroke = "#2b4a9b",
   fill = true,
 }: {
   data: number[];
@@ -14,7 +14,7 @@ export function Sparkline({
   fill?: boolean;
 }) {
   if (!data || data.length < 2) {
-    return <div style={{ width, height }} className="rounded bg-white/5" />;
+    return <div style={{ width, height }} className="rounded bg-well" />;
   }
   const min = Math.min(...data);
   const max = Math.max(...data);

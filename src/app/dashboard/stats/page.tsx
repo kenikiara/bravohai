@@ -15,16 +15,16 @@ export default function StatsPage() {
     setStats(computeStats(h));
   }, []);
 
-  if (!stats) return <div className="p-10 text-sm text-neutral-500">Loading…</div>;
+  if (!stats) return <div className="p-10 text-sm text-faint">Loading…</div>;
 
   const adaptationPct = Math.min(100, Math.round((stats.total / 10) * 100));
 
   return (
     <div className="p-6 md:p-10 max-w-5xl">
-      <div className="text-sm text-neutral-500 mb-8">Dashboard / Performance</div>
-      <h1 className="text-2xl font-semibold text-white">Your performance</h1>
-      <p className="mt-1.5 text-sm text-neutral-400">
-        Every analysis is saved — mark wins and losses to watch your edge evolve.
+      <div className="text-sm text-faint mb-8">Dashboard / Performance</div>
+      <h1 className="font-display text-2xl font-bold text-ink">Your performance</h1>
+      <p className="mt-1.5 text-sm text-muted">
+        Every analysis is saved. Mark wins and losses to watch your edge evolve.
       </p>
 
       <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -32,29 +32,29 @@ export default function StatsPage() {
         <StatCard
           label="Win rate"
           value={stats.decided ? `${stats.winRate}%` : "—"}
-          valueClass={stats.winRate >= 50 ? "text-bull" : stats.decided ? "text-bear" : "text-white"}
+          valueClass={stats.winRate >= 50 ? "text-bull" : stats.decided ? "text-bear" : "text-ink"}
           sub={stats.decided ? `${stats.wins}W · ${stats.losses}L` : "mark outcomes to track"}
         />
         <StatCard
           label="Current streak"
           value={stats.streak === 0 ? "—" : `${Math.abs(stats.streak)} ${stats.streak > 0 ? "wins" : "losses"}`}
-          valueClass={stats.streak > 0 ? "text-bull" : stats.streak < 0 ? "text-bear" : "text-white"}
+          valueClass={stats.streak > 0 ? "text-bull" : stats.streak < 0 ? "text-bear" : "text-ink"}
         />
         <StatCard label="Pending outcomes" value={String(stats.total - stats.decided)} />
       </div>
 
       {/* AI adaptation */}
-      <div className="mt-6 rounded-xl border border-edge bg-card p-5">
+      <div className="mt-6 rounded-xl border border-edge bg-surface p-5">
         <div className="flex items-center justify-between">
-          <div className="text-sm font-medium text-white">AI profile adaptation</div>
-          <div className="text-xs text-neutral-400">{Math.min(stats.total, 10)}/10 analyses</div>
+          <div className="text-sm font-bold text-ink">AI profile adaptation</div>
+          <div className="text-xs text-muted">{Math.min(stats.total, 10)}/10 analyses</div>
         </div>
-        <div className="mt-3 h-2 rounded-full bg-white/10 overflow-hidden">
-          <div className="h-full bg-gold transition-all" style={{ width: `${adaptationPct}%` }} />
+        <div className="mt-3 h-2 rounded-full bg-well overflow-hidden">
+          <div className="h-full bg-flame transition-all duration-300" style={{ width: `${adaptationPct}%` }} />
         </div>
-        <p className="mt-2.5 text-xs text-neutral-500">
+        <p className="mt-2.5 text-xs text-faint">
           {stats.total >= 10
-            ? "Calibrated — BravohAi now weighs its recommendations toward your trading style."
+            ? "Calibrated. BravohAi now weighs its recommendations toward your trading style."
             : `After ${10 - stats.total} more analyses, BravohAi fully adapts its recommendations to your style.`}
         </p>
       </div>
@@ -62,16 +62,16 @@ export default function StatsPage() {
       {/* Per instrument */}
       {Object.keys(stats.byInstrument).length > 0 && (
         <>
-          <h2 className="mt-10 mb-4 text-sm font-semibold text-white tracking-wide">By instrument</h2>
-          <div className="rounded-xl border border-edge bg-card overflow-hidden">
+          <h2 className="mt-10 mb-4 text-sm font-bold text-ink tracking-wide">By instrument</h2>
+          <div className="rounded-xl border border-edge bg-surface overflow-hidden">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-edge text-left text-xs text-neutral-500">
-                  <th className="px-5 py-3 font-medium">Instrument</th>
-                  <th className="px-5 py-3 font-medium">Analyses</th>
-                  <th className="px-5 py-3 font-medium">Wins</th>
-                  <th className="px-5 py-3 font-medium">Losses</th>
-                  <th className="px-5 py-3 font-medium">Win rate</th>
+                <tr className="border-b border-edge bg-well text-left text-xs text-muted">
+                  <th className="px-5 py-3 font-semibold">Instrument</th>
+                  <th className="px-5 py-3 font-semibold">Analyses</th>
+                  <th className="px-5 py-3 font-semibold">Wins</th>
+                  <th className="px-5 py-3 font-semibold">Losses</th>
+                  <th className="px-5 py-3 font-semibold">Win rate</th>
                 </tr>
               </thead>
               <tbody>
@@ -79,16 +79,16 @@ export default function StatsPage() {
                   const decided = s.wins + s.losses;
                   const wr = decided ? Math.round((s.wins / decided) * 100) : null;
                   return (
-                    <tr key={code} className="border-b border-edge/50 last:border-0">
-                      <td className="px-5 py-3 font-medium text-white">{code}</td>
-                      <td className="px-5 py-3 text-neutral-300">{s.total}</td>
-                      <td className="px-5 py-3 text-bull">{s.wins}</td>
-                      <td className="px-5 py-3 text-bear">{s.losses}</td>
+                    <tr key={code} className="border-b border-edge/60 last:border-0">
+                      <td className="px-5 py-3 font-semibold text-ink">{code}</td>
+                      <td className="px-5 py-3 text-muted">{s.total}</td>
+                      <td className="px-5 py-3 text-bull font-medium">{s.wins}</td>
+                      <td className="px-5 py-3 text-bear font-medium">{s.losses}</td>
                       <td className="px-5 py-3">
                         {wr === null ? (
-                          <span className="text-neutral-600">—</span>
+                          <span className="text-faint">—</span>
                         ) : (
-                          <span className={wr >= 50 ? "text-bull" : "text-bear"}>{wr}%</span>
+                          <span className={`font-semibold ${wr >= 50 ? "text-bull" : "text-bear"}`}>{wr}%</span>
                         )}
                       </td>
                     </tr>
@@ -101,11 +101,14 @@ export default function StatsPage() {
       )}
 
       {/* Recent analyses */}
-      <h2 className="mt-10 mb-4 text-sm font-semibold text-white tracking-wide">Recent analyses</h2>
+      <h2 className="mt-10 mb-4 text-sm font-bold text-ink tracking-wide">Recent analyses</h2>
       {history.length === 0 ? (
-        <div className="rounded-xl border border-edge bg-card p-8 text-center">
-          <p className="text-sm text-neutral-400">No analyses yet.</p>
-          <Link href="/dashboard" className="mt-3 inline-block rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-black">
+        <div className="rounded-xl border border-edge bg-surface p-8 text-center">
+          <p className="text-sm text-muted">No analyses yet.</p>
+          <Link
+            href="/dashboard"
+            className="mt-3 inline-block rounded-lg bg-royal px-4 py-2 text-sm font-semibold text-white hover:bg-royal-deep transition-colors"
+          >
             Analyze your first chart
           </Link>
         </div>
@@ -115,22 +118,22 @@ export default function StatsPage() {
             <Link
               key={e.id}
               href={`/dashboard/analysis/${e.id}`}
-              className="rounded-xl border border-edge bg-card overflow-hidden hover:border-gold/50 transition-colors"
+              className="rounded-xl border border-edge bg-surface overflow-hidden hover:border-royal/60 transition-colors duration-150"
             >
               {e.thumbnail ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={e.thumbnail} alt="" className="h-24 w-full object-cover opacity-80" />
+                <img src={e.thumbnail} alt="" className="h-24 w-full object-cover" />
               ) : (
-                <div className="h-24 bg-white/[0.03]" />
+                <div className="h-24 bg-well" />
               )}
               <div className="p-3.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-white">{e.instrumentLabel}</span>
+                  <span className="text-sm font-semibold text-ink">{e.instrumentLabel}</span>
                   {e.outcome === "win" && <span className="text-[10px] font-bold text-bull">WIN</span>}
                   {e.outcome === "loss" && <span className="text-[10px] font-bold text-bear">LOSS</span>}
-                  {e.outcome === "pending" && <span className="text-[10px] text-neutral-500">PENDING</span>}
+                  {e.outcome === "pending" && <span className="text-[10px] text-faint">PENDING</span>}
                 </div>
-                <div className="mt-1 text-[11px] text-neutral-500">
+                <div className="mt-1 text-[11px] text-faint">
                   {new Date(e.createdAt).toLocaleString(undefined, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}
                   {" · "}
                   {e.result.trend.direction}
@@ -148,7 +151,7 @@ function StatCard({
   label,
   value,
   sub,
-  valueClass = "text-white",
+  valueClass = "text-ink",
 }: {
   label: string;
   value: string;
@@ -156,10 +159,10 @@ function StatCard({
   valueClass?: string;
 }) {
   return (
-    <div className="rounded-xl border border-edge bg-card p-5">
-      <div className={`text-2xl font-bold tracking-tight ${valueClass}`}>{value}</div>
-      <div className="mt-1 text-xs text-neutral-500">{label}</div>
-      {sub && <div className="mt-0.5 text-[11px] text-neutral-600">{sub}</div>}
+    <div className="rounded-xl border border-edge bg-surface p-5">
+      <div className={`font-display text-2xl font-bold tracking-tight ${valueClass}`}>{value}</div>
+      <div className="mt-1 text-xs text-muted">{label}</div>
+      {sub && <div className="mt-0.5 text-[11px] text-faint">{sub}</div>}
     </div>
   );
 }

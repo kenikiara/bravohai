@@ -5,61 +5,61 @@ import { GoldTicker } from "@/components/landing/GoldTicker";
 
 const FEATURES = [
   {
-    title: "The AI that analyzes like a pro trader, in seconds",
-    body: "No more hours wasted on TradingView without knowing whether to buy or sell. Support/resistance, order blocks, Fibonacci, RSI, macro context, probable scenarios — in seconds you have everything, without spending years training.",
-    icon: "⚡",
+    n: "01",
+    title: "Analysis like a pro trader, in seconds",
+    body: "No more hours on TradingView without knowing whether to buy or sell. Market structure, support and resistance, order blocks, Fibonacci, RSI, macro context and probable scenarios: everything a professional reads on a chart, delivered in seconds.",
   },
   {
-    title: "Built around Gold — XAUUSD is our home turf",
-    body: "BravohAi is tuned for the metal that moves: DXY correlation, real yields, session liquidity and news sensitivity are baked into every XAUUSD read. Forex, crypto and indices work great too.",
-    icon: "🥇",
+    n: "02",
+    title: "Gold is our home turf",
+    body: "BravohAi is tuned for XAUUSD: DXY correlation, real yields, session liquidity and news sensitivity are baked into every read. Forex, crypto and indices are fully supported too.",
   },
   {
-    title: "Your AI agent adapts to you over time",
-    body: "After 10 analyses, BravohAi understands if you're a scalper, day trader or swing trader and adjusts its trade plans accordingly. It's like having a coach who knows you inside out.",
-    icon: "🧠",
+    n: "03",
+    title: "It adapts to you over time",
+    body: "After 10 analyses, BravohAi knows whether you scalp, day trade or swing, and weighs its trade plans toward your style. Like a coach who knows you inside out.",
   },
   {
-    title: "Trade (finally) with confidence",
-    body: "BravohAi gives you clear scenarios with probabilities: “If price breaks 4,548, bullish scenario toward 4,558 (58% probability)”. No more “maybe”. You have a plan A and a plan B — and when there's no edge, it tells you not to trade.",
-    icon: "🎯",
+    n: "04",
+    title: "A plan A, a plan B, and the discipline to say no",
+    body: "Clear scenarios with probabilities: \"if price breaks 4,548, bullish toward 4,558 (58%)\". And when a setup is weak, BravohAi refuses to manufacture a trade. That honesty is the edge.",
   },
 ];
 
 const STEPS = [
   {
     n: "1",
-    title: "Create your account (2 minutes)",
-    body: "Sign up and answer 5 questions about your trading style. The AI calibrates your profile to adapt to you from the very first analysis.",
+    title: "Create your account",
+    body: "Two minutes, five questions about your trading style. The AI calibrates to you from the very first analysis.",
   },
   {
     n: "2",
     title: "Analyze your first chart",
-    body: "Upload a screenshot of any chart — XAUUSD is one click away. Seconds later: trend, key zones, and 2 scenarios (bullish/bearish) with probabilities.",
+    body: "Upload a screenshot of any chart. Seconds later: trend, key zones, and two scenarios with probabilities.",
   },
   {
     n: "3",
     title: "Trade with confidence",
-    body: "Follow BravohAi's plan for your profile: entry, stop-loss, take-profit. Every analysis is saved — you see your win rate evolve and correct your mistakes.",
+    body: "Follow the plan for your profile: entry, stop, target. Every analysis is saved so your win rate is always honest.",
   },
 ];
 
 const PLAN_FEATURES = [
   "AI trade plans on every chart you upload",
-  "XAUUSD-tuned macro & economic context",
-  "Scalper / day trader / swing trader plans",
-  "Full history of your analyses + win rate",
+  "XAUUSD-tuned macro and economic context",
+  "Scalper, day trader and swing trader plans",
+  "Full history of your analyses with win rate",
   "Live economic calendar (high-impact USD events)",
   "All BravohAi updates included",
 ];
 
 const TESTIMONIALS = [
-  { quote: "First day trading gold with BravohAi, super happy — profitable in less than one afternoon.", name: "BravohAi Member", role: "Gold trader" },
-  { quote: "Great tool when you don't want to fight with charts — it does almost everything for you. I recommend it.", name: "Marc D.", role: "Member" },
-  { quote: "Took my best XAUUSD trade today. The analysis was perfect, no drawdown. So happy.", name: "BravohAi Member", role: "Trader" },
+  { quote: "First day trading gold with BravohAi, super happy. Profitable in less than one afternoon.", name: "BravohAi Member", role: "Gold trader" },
+  { quote: "Great tool when you don't want to fight with charts. It does almost everything for you.", name: "Marc D.", role: "Member" },
+  { quote: "Took my best XAUUSD trade today. The analysis was perfect, no drawdown.", name: "BravohAi Member", role: "Trader" },
   { quote: "Started 3 days ago and I'm already profitable. The explanations teach me the logic behind every position.", name: "Maxime L.", role: "Member" },
   { quote: "The macro data is always up to date and the entry zones are honestly really good.", name: "Hugo N.", role: "Member" },
-  { quote: "As a beginner I was skeptical — the detailed plans with precise levels changed everything for me.", name: "Kenza S.", role: "Member" },
+  { quote: "As a beginner I was skeptical. The detailed plans with precise levels changed everything for me.", name: "Kenza S.", role: "Member" },
   { quote: "Best AI trading tool I've tried, and I've tried a few. Nothing reads gold like this.", name: "Bella H.", role: "Member" },
   { quote: "10k funded thanks to a plan from this AI. It's insane.", name: "Jake T.", role: "Prop trader" },
 ];
@@ -71,15 +71,15 @@ const FAQ = [
   },
   {
     q: "Does it really work?",
-    a: "BravohAi analyzes the same elements a professional does: market structure, support/resistance, order blocks, fair value gaps, Fibonacci, RSI and macro context. When there is no edge, it says so instead of forcing a trade — that discipline is where most of the value comes from.",
+    a: "BravohAi analyzes the same elements a professional does: market structure, support and resistance, order blocks, fair value gaps, Fibonacci, RSI and macro context. When there is no edge, it says so instead of forcing a trade. That discipline is where most of the value comes from.",
   },
   {
     q: "Why XAUUSD first?",
-    a: "Gold is the most traded chart among our users and one of the most technical instruments in the world. BravohAi's macro layer (DXY, real yields, high-impact USD news) is tuned for it — although forex, crypto and indices are fully supported.",
+    a: "Gold is the most traded chart among our users and one of the most technical instruments in the world. BravohAi's macro layer (DXY, real yields, high-impact USD news) is tuned for it, although forex, crypto and indices are fully supported.",
   },
   {
     q: "I'm a beginner, is it right for me?",
-    a: "Absolutely. BravohAi is made for all levels. The AI explains its analyses clearly and gives you concrete action plans — entry, stop, target — plus the reasoning behind each one so you actually learn while you trade.",
+    a: "Absolutely. BravohAi is made for all levels. The AI explains its analyses clearly and gives you concrete action plans: entry, stop, target, plus the reasoning behind each one so you actually learn while you trade.",
   },
   {
     q: "Can I cancel at any time?",
@@ -87,186 +87,193 @@ const FAQ = [
   },
   {
     q: "What assets does it work with?",
-    a: "All of them: gold and commodities, forex, crypto, indices, stocks. You can analyze any chart screenshot from any platform (TradingView, MT4/MT5, Binance, etc.).",
+    a: "All of them: gold and commodities, forex, crypto, indices, stocks. You can analyze any chart screenshot from any platform (TradingView, MT4/MT5, Binance, and others).",
   },
 ];
 
-function CTA({ children = "Get started now", className = "" }: { children?: React.ReactNode; className?: string }) {
-  return (
-    <Link
-      href="/onboarding"
-      className={`inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-7 py-3.5 font-semibold text-black transition-colors hover:bg-gold-soft gold-glow ${className}`}
-    >
-      {children} <span aria-hidden>→</span>
-    </Link>
-  );
-}
-
 export default function LandingPage() {
   return (
-    <div className="bg-ink text-neutral-200">
+    <div className="bg-bg text-ink">
       {/* Nav */}
-      <header className="sticky top-0 z-40 border-b border-edge/60 bg-ink/80 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-edge bg-bg/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
           <Logo />
-          <nav className="hidden md:flex items-center gap-7 text-sm text-neutral-400">
-            <a href="#how-it-works" className="hover:text-white transition-colors">How it works</a>
-            <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
-            <a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a>
-            <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
+          <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-muted">
+            <a href="#how-it-works" className="hover:text-ink transition-colors">How it works</a>
+            <a href="#pricing" className="hover:text-ink transition-colors">Pricing</a>
+            <a href="#testimonials" className="hover:text-ink transition-colors">Testimonials</a>
+            <a href="#faq" className="hover:text-ink transition-colors">FAQ</a>
           </nav>
           <Link
             href="/dashboard"
-            className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-black hover:bg-gold-soft transition-colors"
+            className="rounded-lg bg-royal px-4 py-2 text-sm font-semibold text-white hover:bg-royal-deep transition-colors"
           >
-            Get started now
+            Open the app
           </Link>
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
+      {/* Hero: drenched royal blue */}
+      <section className="relative overflow-hidden bg-royal-deep text-white">
         <div className="hero-grid absolute inset-0" aria-hidden />
-        <div className="relative mx-auto max-w-4xl px-5 pt-20 pb-16 text-center">
-          <GoldTicker />
-          <h1 className="mt-7 text-4xl md:text-6xl font-bold tracking-tight text-white">
-            Get pro-level <span className="text-gold">Gold</span> analysis
-            <br className="hidden md:block" /> instantly with AI.
-          </h1>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-neutral-400">
-            BravohAi analyzes any chart in seconds and tells you exactly what to do — entry, stop, target. Just with a photo. XAUUSD first, everything else too.
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-3">
-            <CTA className="text-base" />
-            <span className="text-xs text-neutral-500">Sign up in 2 min. No commitment.</span>
+        <div className="relative mx-auto max-w-4xl px-5 pt-16 md:pt-24 pb-40 text-center">
+          <div className="rise-in">
+            <GoldTicker onDark />
           </div>
-
-          {/* mock analysis strip */}
-          <div className="mx-auto mt-14 max-w-2xl rounded-2xl border border-edge bg-panel/90 p-5 text-left shadow-2xl">
-            <div className="flex items-center justify-between border-b border-edge pb-3">
-              <div className="flex items-center gap-2.5">
-                <span className="size-8 rounded-full bg-gold/15 border border-gold/40 flex items-center justify-center text-gold text-xs font-bold">G</span>
-                <div>
-                  <div className="text-sm font-semibold text-white">Gold · XAUUSD</div>
-                  <div className="text-[11px] text-neutral-500">1H + 15M · analyzed in 6.4s</div>
-                </div>
-              </div>
-              <span className="rounded-full border border-bull/40 bg-bull/10 px-2.5 py-1 text-[11px] font-semibold text-bull">
-                BUY LIMIT
-              </span>
-            </div>
-            <div className="grid grid-cols-3 gap-3 pt-4">
-              {[
-                ["Trade price", "4,534–4,540"],
-                ["Stop-Loss", "4,526"],
-                ["Take Profit", "4,558"],
-              ].map(([k, v]) => (
-                <div key={k} className="rounded-lg border border-edge bg-card p-3">
-                  <div className="text-base font-bold text-white">{v}</div>
-                  <div className="text-[11px] text-neutral-500">{k}</div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-3.5 flex items-center gap-2 text-[11px] text-neutral-500">
-              <span className="rounded bg-white/5 px-2 py-0.5">Bullish 58%</span>
-              <span className="rounded bg-white/5 px-2 py-0.5">Bearish 42%</span>
-              <span className="ml-auto">Golden-pocket confluence at 4,538</span>
-            </div>
+          <h1 className="font-display rise-in rise-in-1 mt-8 text-[clamp(2.4rem,6vw,4.2rem)] leading-[1.05] font-bold tracking-tight">
+            Pro-level <span className="text-flame">gold</span> analysis,
+            <br className="hidden md:block" /> from a single screenshot.
+          </h1>
+          <p className="rise-in rise-in-2 mx-auto mt-6 max-w-xl text-lg text-white/75">
+            BravohAi reads your chart the way a professional does and hands you a plan: entry, stop, target, probabilities. XAUUSD first, everything else too.
+          </p>
+          <div className="rise-in rise-in-3 mt-9 flex flex-col items-center gap-3">
+            <Link
+              href="/onboarding"
+              className="inline-flex items-center gap-2 rounded-xl bg-flame px-8 py-4 text-base font-bold text-royal-deep hover:bg-flame-deep hover:text-white transition-colors"
+            >
+              Get started now <span aria-hidden>→</span>
+            </Link>
+            <span className="text-xs text-white/55">Sign up in 2 minutes. No commitment.</span>
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="mx-auto max-w-6xl px-5 py-20">
-        <div className="text-center">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">With expert-level precision</div>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">
-            Built by profitable traders,
-            <br className="hidden md:block" /> tuned for the gold market.
-          </h2>
+      {/* Product proof panel, overlapping the hero */}
+      <div className="relative mx-auto max-w-2xl px-5 -mt-28">
+        <div className="rounded-2xl border border-edge bg-surface p-5 shadow-[0_24px_60px_-24px_oklch(0.36_0.11_265/0.35)]">
+          <div className="flex items-center justify-between border-b border-edge pb-3.5">
+            <div className="flex items-center gap-2.5">
+              <span className="size-9 rounded-full bg-flame-tint border border-flame/50 flex items-center justify-center text-flame-deep text-xs font-bold">
+                Au
+              </span>
+              <div>
+                <div className="text-sm font-bold text-ink">Gold · XAUUSD</div>
+                <div className="text-[11px] text-faint">1H + 15M · analyzed in 6.4s</div>
+              </div>
+            </div>
+            <span className="rounded-full border border-bull/40 bg-bull/10 px-3 py-1 text-[11px] font-bold text-bull">
+              BUY LIMIT
+            </span>
+          </div>
+          <div className="grid grid-cols-3 gap-3 pt-4">
+            {[
+              ["Trade price", "4,534 to 4,540"],
+              ["Stop-Loss", "4,526"],
+              ["Take Profit", "4,558"],
+            ].map(([k, v]) => (
+              <div key={k} className="rounded-lg bg-well px-3 py-3">
+                <div className="text-sm md:text-base font-bold text-ink">{v}</div>
+                <div className="mt-0.5 text-[11px] text-faint">{k}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-3.5 flex items-center gap-2 text-[11px] text-muted">
+            <span className="rounded bg-royal-tint px-2 py-0.5 font-semibold text-royal">Bullish 58%</span>
+            <span className="rounded bg-well px-2 py-0.5">Bearish 42%</span>
+            <span className="ml-auto hidden sm:block text-faint">Golden-pocket confluence at 4,538</span>
+          </div>
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {FEATURES.map((f) => (
-            <div key={f.title} className="rounded-2xl border border-edge bg-card p-7 hover:border-gold/40 transition-colors">
-              <div className="text-2xl">{f.icon}</div>
-              <h3 className="mt-4 text-lg font-semibold text-white">{f.title}</h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-neutral-400">{f.body}</p>
+      </div>
+
+      {/* Features: numbered editorial rows */}
+      <section className="mx-auto max-w-5xl px-5 pt-24 pb-8">
+        <h2 className="font-display max-w-2xl text-[clamp(1.8rem,4vw,2.8rem)] font-bold leading-tight tracking-tight">
+          Built by profitable traders, tuned for the gold market.
+        </h2>
+        <div className="mt-14 space-y-14">
+          {FEATURES.map((f, i) => (
+            <div
+              key={f.n}
+              className={`flex flex-col md:flex-row gap-5 md:gap-12 md:items-baseline ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+            >
+              <div className="font-display shrink-0 text-5xl font-bold text-royal/20 md:w-40 md:text-right">
+                {f.n}
+              </div>
+              <div className={i % 2 === 1 ? "md:mr-auto md:max-w-lg" : "md:max-w-lg"}>
+                <h3 className="font-display text-xl font-bold text-ink">{f.title}</h3>
+                <p className="mt-2.5 leading-relaxed text-muted">{f.body}</p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="border-y border-edge/60 bg-panel/50">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <div className="text-center">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">3 simple steps</div>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">How to get started with BravohAi</h2>
-            <p className="mx-auto mt-3 max-w-md text-sm text-neutral-400">
-              You&apos;re just a few steps away from having your best trading copilot.
-            </p>
+      <section id="how-it-works" className="mt-16 border-y border-edge bg-surface">
+        <div className="mx-auto max-w-5xl px-5 py-20">
+          <div className="md:flex md:items-end md:justify-between">
+            <h2 className="font-display text-[clamp(1.7rem,3.5vw,2.4rem)] font-bold tracking-tight">
+              Three steps to your best trading copilot
+            </h2>
+            <Link
+              href="/onboarding"
+              className="mt-4 md:mt-0 inline-flex items-center gap-2 rounded-lg bg-royal px-5 py-2.5 text-sm font-semibold text-white hover:bg-royal-deep transition-colors"
+            >
+              Get started now →
+            </Link>
           </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <ol className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-8">
             {STEPS.map((s) => (
-              <div key={s.n} className="rounded-2xl border border-edge bg-card p-7">
-                <div className="size-9 rounded-lg bg-gold/15 border border-gold/40 flex items-center justify-center text-gold font-bold">
-                  {s.n}
-                </div>
-                <h3 className="mt-4 font-semibold text-white">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-400">{s.body}</p>
-              </div>
+              <li key={s.n} className="border-t-2 border-royal pt-5">
+                <div className="text-xs font-bold text-royal">STEP {s.n}</div>
+                <h3 className="mt-2 font-display text-lg font-bold text-ink">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{s.body}</p>
+              </li>
             ))}
-          </div>
-          <div className="mt-10 text-center">
-            <CTA />
-          </div>
+          </ol>
         </div>
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="mx-auto max-w-6xl px-5 py-20">
-        <div className="text-center">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Pricing</div>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">Choose your plan</h2>
-          <p className="mt-3 text-sm text-neutral-400">Most of our users recover their investment on their first winning trade.</p>
+      <section id="pricing" className="mx-auto max-w-5xl px-5 py-20">
+        <div className="max-w-xl">
+          <h2 className="font-display text-[clamp(1.7rem,3.5vw,2.4rem)] font-bold tracking-tight">Choose your plan</h2>
+          <p className="mt-3 text-muted">Most users recover their investment on their first winning trade.</p>
         </div>
-        <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Monthly */}
-          <div className="rounded-2xl border border-edge bg-card p-7">
+        <div className="mt-10 grid max-w-3xl grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="rounded-2xl border border-edge bg-surface p-7">
             <div className="flex items-center justify-between">
-              <h3 className="font-semibold text-white">Monthly</h3>
-              <span className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-semibold uppercase text-neutral-300">popular</span>
+              <h3 className="font-display font-bold text-ink">Monthly</h3>
+              <span className="rounded-full bg-well px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-muted">popular</span>
             </div>
-            <p className="mt-1.5 text-xs text-neutral-500">Instant access to the gold-first trading AI.</p>
             <div className="mt-5 flex items-end gap-1.5">
-              <span className="text-4xl font-bold text-white">$40</span>
-              <span className="pb-1 text-sm text-neutral-500">/month</span>
+              <span className="font-display text-4xl font-bold text-ink">$40</span>
+              <span className="pb-1 text-sm text-faint">/month</span>
             </div>
-            <CTA className="mt-6 w-full text-sm !py-3" />
-            <ul className="mt-6 space-y-2.5 text-sm text-neutral-300">
+            <Link
+              href="/onboarding"
+              className="mt-6 flex items-center justify-center rounded-lg border border-royal px-5 py-3 text-sm font-semibold text-royal hover:bg-royal-tint transition-colors"
+            >
+              Get started now
+            </Link>
+            <ul className="mt-6 space-y-2.5 text-sm text-muted">
               {PLAN_FEATURES.map((f) => (
                 <li key={f} className="flex gap-2.5">
-                  <span className="text-gold">✓</span> {f}
+                  <span className="text-bull font-bold">✓</span> {f}
                 </li>
               ))}
             </ul>
           </div>
-          {/* Lifetime */}
-          <div className="relative rounded-2xl border border-gold/60 bg-card p-7 gold-glow">
+          <div className="rounded-2xl border-2 border-royal bg-surface p-7">
             <div className="flex items-center justify-between">
-              <h3 className="font-semibold text-white">Lifetime</h3>
-              <span className="rounded-full bg-gold px-2.5 py-1 text-[10px] font-semibold uppercase text-black">best value</span>
+              <h3 className="font-display font-bold text-ink">Lifetime</h3>
+              <span className="rounded-full bg-flame px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">best value</span>
             </div>
-            <p className="mt-1.5 text-xs text-neutral-500">One payment. Every update, forever.</p>
             <div className="mt-5 flex items-end gap-1.5">
-              <span className="text-4xl font-bold text-white">$180</span>
-              <span className="pb-1 text-sm text-neutral-500">one-time payment</span>
+              <span className="font-display text-4xl font-bold text-ink">$180</span>
+              <span className="pb-1 text-sm text-faint">one-time payment</span>
             </div>
-            <CTA className="mt-6 w-full text-sm !py-3" />
-            <ul className="mt-6 space-y-2.5 text-sm text-neutral-300">
+            <Link
+              href="/onboarding"
+              className="mt-6 flex items-center justify-center rounded-lg bg-royal px-5 py-3 text-sm font-semibold text-white hover:bg-royal-deep transition-colors"
+            >
+              Get started now
+            </Link>
+            <ul className="mt-6 space-y-2.5 text-sm text-muted">
               {PLAN_FEATURES.map((f) => (
                 <li key={f} className="flex gap-2.5">
-                  <span className="text-gold">✓</span> {f}
+                  <span className="text-bull font-bold">✓</span> {f}
                 </li>
               ))}
             </ul>
@@ -275,19 +282,20 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="border-y border-edge/60 bg-panel/50 py-20 overflow-hidden">
-        <div className="mx-auto max-w-6xl px-5 text-center">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Testimonials</div>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">What BravohAi traders are saying</h2>
+      <section id="testimonials" className="border-y border-edge bg-surface py-20 overflow-hidden">
+        <div className="mx-auto max-w-5xl px-5">
+          <h2 className="font-display text-[clamp(1.7rem,3.5vw,2.4rem)] font-bold tracking-tight">
+            What BravohAi traders are saying
+          </h2>
         </div>
         <div className="mt-12">
           <div className="flex w-max animate-marquee gap-4">
             {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
-              <figure key={i} className="w-80 shrink-0 rounded-2xl border border-edge bg-card p-5 text-left">
-                <div className="text-gold text-xs tracking-widest">★★★★★</div>
-                <blockquote className="mt-3 text-sm leading-relaxed text-neutral-300">“{t.quote}”</blockquote>
-                <figcaption className="mt-4 text-xs text-neutral-500">
-                  <span className="text-neutral-300 font-medium">{t.name}</span> · {t.role}
+              <figure key={i} className="w-80 shrink-0 rounded-2xl border border-edge bg-bg p-5">
+                <div className="text-flame text-xs tracking-widest" aria-label="5 star rating">★★★★★</div>
+                <blockquote className="mt-3 text-sm leading-relaxed text-ink">“{t.quote}”</blockquote>
+                <figcaption className="mt-4 text-xs text-faint">
+                  <span className="font-semibold text-muted">{t.name}</span> · {t.role}
                 </figcaption>
               </figure>
             ))}
@@ -295,25 +303,29 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="mx-auto max-w-3xl px-5 py-20 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
-          You&apos;ve made it this far — what are you waiting for?
-        </h2>
-        <p className="mx-auto mt-4 max-w-md text-sm text-neutral-400">
-          There&apos;s no better time to start. Upload your first XAUUSD chart and get a professional trade plan in seconds.
-        </p>
-        <div className="mt-8">
-          <CTA className="text-base" />
+      {/* Final CTA: royal band */}
+      <section className="bg-royal-deep text-white">
+        <div className="mx-auto max-w-3xl px-5 py-20 text-center">
+          <h2 className="font-display text-[clamp(1.8rem,4vw,2.6rem)] font-bold tracking-tight">
+            Your next chart could come with a plan.
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-white/70">
+            Upload your first XAUUSD chart and get a professional trade plan in seconds.
+          </p>
+          <Link
+            href="/onboarding"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-flame px-8 py-4 text-base font-bold text-royal-deep hover:bg-flame-deep hover:text-white transition-colors"
+          >
+            Get started now <span aria-hidden>→</span>
+          </Link>
         </div>
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-3xl px-5 pb-20">
-        <div className="text-center">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">FAQ</div>
-          <h2 className="mt-3 text-3xl font-bold text-white">Frequently asked questions</h2>
-        </div>
+      <section id="faq" className="mx-auto max-w-3xl px-5 py-20">
+        <h2 className="font-display text-center text-[clamp(1.7rem,3.5vw,2.4rem)] font-bold tracking-tight">
+          Frequently asked questions
+        </h2>
         <div className="mt-10 space-y-3">
           {FAQ.map((f) => (
             <Accordion key={f.q} title={f.q}>
@@ -324,43 +336,56 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-edge/60 bg-panel/60">
+      <footer className="border-t border-edge bg-surface">
         <div className="mx-auto max-w-6xl px-5 py-12">
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
             <div className="max-w-xs">
               <Logo />
-              <p className="mt-3 text-sm text-neutral-500">
+              <p className="mt-3 text-sm text-muted">
                 The gold-first trading AI that helps you gain an edge in the markets.
               </p>
             </div>
             <div className="flex gap-14 text-sm">
               <div>
-                <div className="text-xs uppercase tracking-wider text-neutral-500 mb-3">Product</div>
-                <ul className="space-y-2 text-neutral-400">
-                  <li><a href="#how-it-works" className="hover:text-white transition-colors">How it works</a></li>
-                  <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                  <li><a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a></li>
-                  <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+                <div className="text-xs font-bold uppercase tracking-wider text-faint mb-3">Product</div>
+                <ul className="space-y-2 text-muted">
+                  <li><a href="#how-it-works" className="hover:text-ink transition-colors">How it works</a></li>
+                  <li><a href="#pricing" className="hover:text-ink transition-colors">Pricing</a></li>
+                  <li><a href="#testimonials" className="hover:text-ink transition-colors">Testimonials</a></li>
+                  <li><a href="#faq" className="hover:text-ink transition-colors">FAQ</a></li>
                 </ul>
               </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-neutral-500 mb-3">App</div>
-                <ul className="space-y-2 text-neutral-400">
-                  <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
-                  <li><Link href="/onboarding" className="hover:text-white transition-colors">Create account</Link></li>
-                  <li><Link href="/dashboard/stats" className="hover:text-white transition-colors">Performance</Link></li>
+                <div className="text-xs font-bold uppercase tracking-wider text-faint mb-3">App</div>
+                <ul className="space-y-2 text-muted">
+                  <li><Link href="/dashboard" className="hover:text-ink transition-colors">Dashboard</Link></li>
+                  <li><Link href="/onboarding" className="hover:text-ink transition-colors">Create account</Link></li>
+                  <li><Link href="/dashboard/stats" className="hover:text-ink transition-colors">Performance</Link></li>
                 </ul>
               </div>
             </div>
           </div>
-          <div className="mt-10 border-t border-edge/60 pt-6 text-[11px] leading-relaxed text-neutral-600">
+          <div className="mt-10 border-t border-edge pt-6 text-[11px] leading-relaxed text-faint">
             <p>
               BravohAi is an AI-powered chart analysis tool for educational purposes only. Nothing on this site
               constitutes financial advice, investment advice, or a solicitation to buy or sell any financial
               instrument. Not Financial Advice (NFA). Do Your Own Research (DYOR). Trading involves significant risk of
               loss. Past performance is not indicative of future results. Results are not typical and may vary.
             </p>
-            <p className="mt-3">© {new Date().getFullYear()} BravohAi. All rights reserved.</p>
+            <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+              <p>© {new Date().getFullYear()} BravohAi. All rights reserved.</p>
+              <p>
+                Made by{" "}
+                <a
+                  href="https://kendesigners.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-royal hover:text-royal-deep transition-colors"
+                >
+                  kendesigners.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </footer>

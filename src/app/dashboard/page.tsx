@@ -108,22 +108,22 @@ export default function DashboardPage() {
   if (analyzing) {
     return (
       <div className="p-10">
-        <div className="text-sm text-neutral-500 mb-8">Dashboard / Conversation</div>
-        <h2 className="text-lg font-medium text-white mb-6 flex items-center gap-3">
-          <span className="size-2 rounded-full bg-gold animate-pulse-soft" />
+        <div className="text-sm text-faint mb-8">Dashboard / Conversation</div>
+        <h2 className="text-lg font-semibold text-ink mb-6 flex items-center gap-3">
+          <span className="size-2 rounded-full bg-royal animate-pulse-soft" />
           Chart analysis in progress…
         </h2>
         <ul className="space-y-3">
           {PROGRESS_STEPS.map((step, i) => (
             <li key={step} className="flex items-center gap-3 text-sm">
               {i < stepIdx ? (
-                <span className="text-bull">✓</span>
+                <span className="text-bull font-bold">✓</span>
               ) : i === stepIdx ? (
-                <span className="size-3 rounded-full border-2 border-gold border-t-transparent animate-spin" />
+                <span className="size-3 rounded-full border-2 border-royal border-t-transparent animate-spin" />
               ) : (
-                <span className="size-3 rounded-full border border-neutral-700" />
+                <span className="size-3 rounded-full border border-edge" />
               )}
-              <span className={i <= stepIdx ? "text-neutral-200" : "text-neutral-600"}>{step}</span>
+              <span className={i <= stepIdx ? "text-ink" : "text-faint"}>{step}</span>
             </li>
           ))}
         </ul>
@@ -134,25 +134,25 @@ export default function DashboardPage() {
   return (
     <div className="p-6 md:p-10">
       <div className="flex items-center justify-between mb-10">
-        <div className="text-sm text-neutral-500">Dashboard</div>
+        <div className="text-sm text-faint">Dashboard</div>
         {quote && (
-          <div className="flex items-center gap-3 rounded-lg border border-edge bg-card px-3 py-1.5">
-            <span className="text-xs font-medium text-neutral-300">{quote.symbol}</span>
-            <span className="text-sm font-semibold text-white">
+          <div className="flex items-center gap-3 rounded-lg border border-edge bg-surface px-3 py-1.5">
+            <span className="text-xs font-semibold text-muted">{quote.symbol}</span>
+            <span className="text-sm font-bold text-ink">
               {quote.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}
             </span>
-            <span className={`text-xs font-medium ${quote.changePct >= 0 ? "text-bull" : "text-bear"}`}>
+            <span className={`text-xs font-semibold ${quote.changePct >= 0 ? "text-bull" : "text-bear"}`}>
               {quote.changePct >= 0 ? "+" : ""}
               {quote.changePct.toFixed(2)}%
             </span>
-            <Sparkline data={quote.spark} width={72} height={24} stroke={quote.changePct >= 0 ? "#02B365" : "#FF6243"} fill={false} />
+            <Sparkline data={quote.spark} width={72} height={24} stroke={quote.changePct >= 0 ? "#1f9d57" : "#c94f38"} fill={false} />
           </div>
         )}
       </div>
 
       <div className="max-w-2xl mx-auto text-center">
-        <h1 className="text-2xl font-semibold text-white">Analyze your chart</h1>
-        <p className="mt-2 text-sm text-neutral-400">
+        <h1 className="font-display text-2xl font-bold text-ink">Analyze your chart</h1>
+        <p className="mt-2 text-sm text-muted">
           Upload multiple timeframes (1m, 5m, 1h) for a better AI analysis.
         </p>
 
@@ -162,10 +162,10 @@ export default function DashboardPage() {
               key={ins.code}
               type="button"
               onClick={() => setInstrument(ins.code)}
-              className={`rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors ${
+              className={`rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors duration-150 ${
                 instrument === ins.code
-                  ? "border-gold bg-gold/10 text-gold"
-                  : "border-edge text-neutral-400 hover:border-neutral-500 hover:text-white"
+                  ? "border-royal bg-royal-tint text-royal"
+                  : "border-edge bg-surface text-muted hover:border-faint hover:text-ink"
               }`}
             >
               {ins.primary ? "★ " : ""}
@@ -177,6 +177,7 @@ export default function DashboardPage() {
         <div
           role="button"
           tabIndex={0}
+          aria-label="Upload chart screenshots"
           onClick={() => fileInput.current?.click()}
           onKeyDown={(e) => e.key === "Enter" && fileInput.current?.click()}
           onDragOver={(e) => {
@@ -189,8 +190,8 @@ export default function DashboardPage() {
             setDragOver(false);
             addFiles(e.dataTransfer.files);
           }}
-          className={`mt-8 rounded-2xl border-2 border-dashed px-8 py-14 cursor-pointer transition-colors ${
-            dragOver ? "border-gold bg-gold/[0.05]" : "border-edge bg-card hover:border-neutral-500"
+          className={`mt-8 rounded-2xl border-2 border-dashed px-8 py-14 cursor-pointer transition-colors duration-150 ${
+            dragOver ? "border-royal bg-royal-tint" : "border-edge bg-surface hover:border-royal/50"
           }`}
         >
           <input
@@ -203,16 +204,16 @@ export default function DashboardPage() {
           />
           {images.length === 0 ? (
             <>
-              <div className="mx-auto mb-4 size-14 rounded-xl bg-white/[0.04] border border-edge flex items-center justify-center">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gold" aria-hidden>
+              <div className="mx-auto mb-4 size-14 rounded-xl bg-royal-tint border border-royal/25 flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-royal" aria-hidden>
                   <path d="M4 17l4-6 3 4 3-5 6 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                   <rect x="3" y="4" width="18" height="16" rx="2.5" stroke="currentColor" strokeWidth="1.6" />
                 </svg>
               </div>
-              <p className="text-sm text-neutral-300">
-                Drag an image, paste a screenshot, or <span className="text-gold underline underline-offset-2">click to import</span>
+              <p className="text-sm text-ink">
+                Drag an image, paste a screenshot, or <span className="text-royal font-semibold underline underline-offset-2">click to import</span>
               </p>
-              <p className="mt-1.5 text-xs text-neutral-500">PNG or JPG · up to 4 timeframes</p>
+              <p className="mt-1.5 text-xs text-faint">PNG or JPG · up to 4 timeframes</p>
             </>
           ) : (
             <div className="flex flex-wrap justify-center gap-3">
@@ -226,7 +227,7 @@ export default function DashboardPage() {
                       e.stopPropagation();
                       setImages((prev) => prev.filter((_, j) => j !== i));
                     }}
-                    className="absolute -top-2 -right-2 size-6 rounded-full bg-black border border-edge text-neutral-400 hover:text-white hover:border-bear text-xs"
+                    className="absolute -top-2 -right-2 size-6 rounded-full bg-surface border border-edge text-muted hover:text-bear hover:border-bear text-xs shadow-sm"
                     aria-label="Remove image"
                   >
                     ✕
@@ -234,7 +235,7 @@ export default function DashboardPage() {
                 </div>
               ))}
               {images.length < 4 && (
-                <div className="h-28 w-20 rounded-lg border border-dashed border-edge flex items-center justify-center text-neutral-500 text-2xl">
+                <div className="h-28 w-20 rounded-lg border border-dashed border-edge flex items-center justify-center text-faint text-2xl">
                   +
                 </div>
               )}
@@ -246,24 +247,26 @@ export default function DashboardPage() {
           type="text"
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
-          placeholder="Optional note for the AI — e.g. “focus on the London session range”"
-          className="mt-4 w-full rounded-lg border border-edge bg-card px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:border-gold/60 focus:outline-none"
+          placeholder="Optional note for the AI, e.g. focus on the London session range"
+          className="mt-4 w-full rounded-lg border border-edge bg-surface px-4 py-3 text-sm text-ink placeholder:text-faint focus:border-royal focus:outline-none"
         />
 
         {error && (
-          <div className="mt-4 rounded-lg border border-bear/40 bg-bear/10 px-4 py-3 text-sm text-bear">{error}</div>
+          <div role="alert" className="mt-4 rounded-lg border border-bear/40 bg-bear/10 px-4 py-3 text-sm text-bear">
+            {error}
+          </div>
         )}
 
         <button
           type="button"
           disabled={!images.length}
           onClick={runAnalysis}
-          className="mt-6 w-full rounded-xl bg-gold py-3.5 font-semibold text-black transition-all hover:bg-gold-soft disabled:opacity-40 disabled:cursor-not-allowed gold-glow"
+          className="mt-6 w-full rounded-xl bg-royal py-3.5 font-bold text-white transition-colors duration-150 hover:bg-royal-deep disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Analyze {images.length > 1 ? `${images.length} charts` : "chart"} →
         </button>
-        <p className="mt-3 text-xs text-neutral-600">
-          Educational analysis only — not financial advice. Trading involves significant risk.
+        <p className="mt-3 text-xs text-faint">
+          Educational analysis only. Not financial advice. Trading involves significant risk.
         </p>
       </div>
     </div>

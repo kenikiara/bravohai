@@ -1,22 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #070707;
-  --color-panel: #0e0e0e;
-  --color-card: #151515;
-  --color-edge: #262626;
-  --color-gold: #facc15;
-  --color-gold-soft: #fde68a;
-  --color-gold-deep: #a16207;
-  --color-bull: #02b365;
-  --color-bear: #ff6243;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-:root {
-  --background: #070707;
-  --foreground: #ededed;
+  --color-bg: oklch(0.977 0.005 262);
+  --color-surface: oklch(0.993 0.002 262);
+  --color-well: oklch(0.955 0.008 262);
+  --color-edge: oklch(0.9 0.012 262);
+  --color-ink: oklch(0.28 0.02 262);
+  --color-muted: oklch(0.5 0.022 262);
+  --color-faint: oklch(0.62 0.02 262);
+  --color-royal: oklch(0.43 0.128 265);
+  --color-royal-deep: oklch(0.36 0.11 265);
+  --color-royal-tint: oklch(0.945 0.02 265);
+  --color-flame: oklch(0.745 0.15 65);
+  --color-flame-deep: oklch(0.66 0.15 60);
+  --color-flame-tint: oklch(0.97 0.03 80);
+  --color-bull: oklch(0.6 0.125 155);
+  --color-bear: oklch(0.55 0.17 28);
+  --font-sans: var(--font-hanken);
+  --font-display: var(--font-bricolage);
 }
 
 html {
@@ -24,26 +25,32 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-hanken), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: rgba(250, 204, 21, 0.3);
+  background: oklch(0.43 0.128 265 / 0.18);
 }
 
-.gold-glow {
-  box-shadow: 0 0 60px -12px rgba(250, 204, 21, 0.35);
+:focus-visible {
+  outline: 2px solid var(--color-royal);
+  outline-offset: 2px;
 }
 
+.font-display {
+  font-family: var(--font-bricolage), var(--font-hanken), system-ui, sans-serif;
+}
+
+/* Subtle blueprint grid for the hero, on royal blue */
 .hero-grid {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, oklch(1 0 0 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 0.06) 1px, transparent 1px);
   background-size: 44px 44px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 10%, black 30%, transparent 100%);
 }
 
 @keyframes pulse-soft {
@@ -70,9 +77,45 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 45s linear infinite;
+  animation: marquee 48s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.rise-in-1 {
+  animation-delay: 0.08s;
+}
+.rise-in-2 {
+  animation-delay: 0.16s;
+}
+.rise-in-3 {
+  animation-delay: 0.26s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-pulse-soft,
+  .rise-in {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

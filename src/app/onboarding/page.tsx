@@ -20,7 +20,7 @@ const QUESTIONS: Question[] = [
     title: "How do you like to trade?",
     subtitle: "BravohAi calibrates every trade plan to your holding period.",
     options: [
-      { value: "scalper", label: "Scalper", hint: "In and out in minutes — tight stops, quick targets" },
+      { value: "scalper", label: "Scalper", hint: "In and out in minutes, tight stops, quick targets" },
       { value: "dayTrader", label: "Day trader", hint: "Intraday positions, flat by session close" },
       { value: "swingTrader", label: "Swing trader", hint: "Multi-day holds on higher-timeframe structure" },
     ],
@@ -30,9 +30,9 @@ const QUESTIONS: Question[] = [
     title: "How much trading experience do you have?",
     subtitle: "This adjusts how much the AI explains its reasoning.",
     options: [
-      { value: "beginner", label: "Beginner", hint: "Less than a year — explain everything" },
-      { value: "intermediate", label: "Intermediate", hint: "1–3 years — keep it practical" },
-      { value: "advanced", label: "Advanced", hint: "3+ years — straight to the levels" },
+      { value: "beginner", label: "Beginner", hint: "Less than a year: explain everything" },
+      { value: "intermediate", label: "Intermediate", hint: "1 to 3 years: keep it practical" },
+      { value: "advanced", label: "Advanced", hint: "3+ years: straight to the levels" },
     ],
   },
   {
@@ -48,7 +48,7 @@ const QUESTIONS: Question[] = [
   {
     key: "markets",
     title: "Which markets do you trade?",
-    subtitle: "Pick all that apply — Gold traders get macro context by default.",
+    subtitle: "Pick all that apply. Gold traders get macro context by default.",
     multi: true,
     options: [
       { value: "gold", label: "Gold (XAUUSD)", hint: "Our primary market" },
@@ -132,46 +132,46 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-ink flex flex-col">
+    <div className="min-h-screen bg-bg flex flex-col">
       <header className="p-5">
         <Logo />
       </header>
       <div className="flex-1 flex items-center justify-center px-4 pb-16">
         <div className="w-full max-w-lg">
           {/* progress */}
-          <div className="flex gap-1.5 mb-8">
+          <div className="flex gap-1.5 mb-8" role="progressbar" aria-valuenow={step + 1} aria-valuemax={totalSteps}>
             {Array.from({ length: totalSteps }).map((_, i) => (
-              <div key={i} className={`h-1 flex-1 rounded-full ${i <= step ? "bg-gold" : "bg-white/10"}`} />
+              <div key={i} className={`h-1 flex-1 rounded-full ${i <= step ? "bg-royal" : "bg-edge"}`} />
             ))}
           </div>
 
           {isAccountStep ? (
             <>
-              <h1 className="text-2xl font-semibold text-white">Create your account</h1>
-              <p className="mt-1.5 text-sm text-neutral-400">
-                2 minutes, 5 questions — the AI calibrates to you from your very first analysis.
+              <h1 className="font-display text-2xl font-bold text-ink">Create your account</h1>
+              <p className="mt-1.5 text-sm text-muted">
+                2 minutes, 5 questions. The AI calibrates to you from your very first analysis.
               </p>
               <div className="mt-6 space-y-3">
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your name"
-                  className="w-full rounded-lg border border-edge bg-card px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:border-gold/60 focus:outline-none"
+                  className="w-full rounded-lg border border-edge bg-surface px-4 py-3 text-sm text-ink placeholder:text-faint focus:border-royal focus:outline-none"
                 />
                 <input
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email (optional — stays on this device)"
+                  placeholder="Email (optional, stays on this device)"
                   type="email"
-                  className="w-full rounded-lg border border-edge bg-card px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:border-gold/60 focus:outline-none"
+                  className="w-full rounded-lg border border-edge bg-surface px-4 py-3 text-sm text-ink placeholder:text-faint focus:border-royal focus:outline-none"
                 />
               </div>
             </>
           ) : (
             q && (
               <>
-                <h1 className="text-2xl font-semibold text-white">{q.title}</h1>
-                <p className="mt-1.5 text-sm text-neutral-400">{q.subtitle}</p>
+                <h1 className="font-display text-2xl font-bold text-ink">{q.title}</h1>
+                <p className="mt-1.5 text-sm text-muted">{q.subtitle}</p>
                 <div className="mt-6 space-y-2.5">
                   {q.options.map((opt) => {
                     const selected = q.multi
@@ -182,17 +182,17 @@ export default function OnboardingPage() {
                         key={opt.value}
                         type="button"
                         onClick={() => select(opt.value)}
-                        className={`w-full text-left rounded-xl border px-5 py-4 transition-colors ${
+                        className={`w-full text-left rounded-xl border px-5 py-4 transition-colors duration-150 ${
                           selected
-                            ? "border-gold bg-gold/[0.08]"
-                            : "border-edge bg-card hover:border-neutral-500"
+                            ? "border-royal bg-royal-tint"
+                            : "border-edge bg-surface hover:border-royal/50"
                         }`}
                       >
                         <span className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-white">{opt.label}</span>
-                          {selected && <span className="text-gold text-sm">✓</span>}
+                          <span className={`text-sm font-semibold ${selected ? "text-royal" : "text-ink"}`}>{opt.label}</span>
+                          {selected && <span className="text-royal text-sm font-bold">✓</span>}
                         </span>
-                        <span className="mt-0.5 block text-xs text-neutral-500">{opt.hint}</span>
+                        <span className="mt-0.5 block text-xs text-faint">{opt.hint}</span>
                       </button>
                     );
                   })}
@@ -205,7 +205,7 @@ export default function OnboardingPage() {
             <button
               type="button"
               onClick={() => setStep((s) => Math.max(0, s - 1))}
-              className={`text-sm text-neutral-500 hover:text-white transition-colors ${step === 0 ? "invisible" : ""}`}
+              className={`text-sm text-muted hover:text-ink transition-colors ${step === 0 ? "invisible" : ""}`}
             >
               ← Back
             </button>
@@ -214,7 +214,7 @@ export default function OnboardingPage() {
                 type="button"
                 disabled={!canContinue()}
                 onClick={() => setStep((s) => s + 1)}
-                className="rounded-lg bg-gold px-6 py-2.5 text-sm font-semibold text-black hover:bg-gold-soft disabled:opacity-40 transition-colors"
+                className="rounded-lg bg-royal px-6 py-2.5 text-sm font-semibold text-white hover:bg-royal-deep disabled:opacity-40 transition-colors duration-150"
               >
                 Continue
               </button>
@@ -223,7 +223,7 @@ export default function OnboardingPage() {
                 type="button"
                 disabled={!canContinue()}
                 onClick={() => finish()}
-                className="rounded-lg bg-gold px-6 py-2.5 text-sm font-semibold text-black hover:bg-gold-soft disabled:opacity-40 transition-colors"
+                className="rounded-lg bg-royal px-6 py-2.5 text-sm font-semibold text-white hover:bg-royal-deep disabled:opacity-40 transition-colors duration-150"
               >
                 Enter the dashboard →
               </button>
